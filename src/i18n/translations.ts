@@ -1,0 +1,466 @@
+export type Lang = "fr" | "en";
+
+export const translations = {
+  fr: {
+    nav: {
+      about: "À propos",
+      skills: "Compétences",
+      certs: "Certifications",
+      project: "Projet phare",
+      projects: "Projets",
+      timeline: "Parcours",
+      contact: "Contact",
+    },
+    hero: {
+      prompt: "whoami",
+      name: "Wijdane Hachani",
+      title: "Ingénieure en Cybersécurité & Confiance Numérique",
+      subtitles: [
+        "SOC Analyst",
+        "Détection de menaces",
+        "SIEM & SOAR",
+        "Sécurité IT/OT",
+      ],
+      location: "Safi, Maroc — ouverte à Casablanca / Rabat",
+      downloadCV: "Télécharger mon CV",
+      contact: "Me contacter",
+    },
+    about: {
+      tag: "01. À propos",
+      heading: "À propos",
+      text1: "Ingénieure en cybersécurité et confiance numérique, diplômée de l'ENSET Mohammedia en 2026. Spécialisée dans l'analyse SOC, la détection de menaces et la sécurisation des environnements IT/OT.",
+      text2: "J'ai acquis une expérience concrète lors de trois stages chez OCP Group, en travaillant sur la mise en place d'un SOC automatisé IT/OT, l'audit de conformité ISO 27001 et la détection de menaces par analyse SIEM.",
+      text3: "Rigoureuse, méthodique et passionnée par la sécurité défensive, je recherche un premier poste en Blue Team ou SOC Analyst N1 au Maroc.",
+      metrics: [
+        { value: "3", label: "stages en cybersécurité chez OCP Group" },
+        { value: "5+", label: "outils SOC maîtrisés (Wazuh, pfSense, n8n…)" },
+        { value: "2026", label: "diplôme ENSET Mohammedia" },
+      ],
+    },
+    skills: {
+      tag: "02. Compétences",
+      heading: "Compétences techniques",
+      categories: [
+        {
+          title: "SOC & Détection",
+          icon: "ShieldAlert",
+          items: [
+            { name: "Wazuh (SIEM)", level: "Avancé" },
+            { name: "Détection de menaces", level: "Intermédiaire" },
+            { name: "Analyse de logs", level: "Avancé" },
+            { name: "Surveillance IT/OT", level: "Intermédiaire" },
+            { name: "DFIR (intro)", level: "Notions" },
+          ],
+        },
+        {
+          title: "Réseaux & Sécurité réseau",
+          icon: "Network",
+          items: [
+            { name: "pfSense / Firewall", level: "Intermédiaire" },
+            { name: "Protocoles Modbus / DNP3", level: "Intermédiaire" },
+            { name: "TCP/IP & VLAN", level: "Avancé" },
+            { name: "IDS / IPS", level: "Intermédiaire" },
+          ],
+        },
+        {
+          title: "Systèmes & Virtualisation",
+          icon: "Server",
+          items: [
+            { name: "Linux (Debian/Ubuntu)", level: "Avancé" },
+            { name: "Windows Server / AD", level: "Intermédiaire" },
+            { name: "Docker", level: "Intermédiaire" },
+            { name: "VirtualBox / Proxmox", level: "Intermédiaire" },
+          ],
+        },
+        {
+          title: "Automatisation & Scripting",
+          icon: "Terminal",
+          items: [
+            { name: "Python", level: "Avancé" },
+            { name: "Bash", level: "Intermédiaire" },
+            { name: "n8n (SOAR)", level: "Intermédiaire" },
+            { name: "PowerShell", level: "Notions" },
+          ],
+        },
+        {
+          title: "Audit & Conformité",
+          icon: "ClipboardCheck",
+          items: [
+            { name: "ISO 27001", level: "Intermédiaire" },
+            { name: "Analyse de risques", level: "Intermédiaire" },
+            { name: "Politiques de sécurité", level: "Intermédiaire" },
+          ],
+        },
+        {
+          title: "Bases de données",
+          icon: "Database",
+          items: [
+            { name: "MySQL", level: "Intermédiaire" },
+            { name: "PostgreSQL", level: "Intermédiaire" },
+            { name: "Elasticsearch", level: "Notions" },
+          ],
+        },
+      ],
+    },
+    certifications: {
+      tag: "03. Certifications",
+      heading: "Certifications",
+      placeholder: "[À COMPLÉTER — liste exacte et liens de vérification]",
+      list: [
+        { name: "[À COMPLÉTER]", org: "[Organisme]", year: "[Année]" },
+      ],
+    },
+    featuredProject: {
+      tag: "04. Projet phare",
+      heading: "SOC automatisé IT/OT — OCP Group",
+      problem: {
+        label: "Problème",
+        text: "Dans un environnement industriel, les attaques sur les systèmes OT (protocoles Modbus, PLCs) peuvent paralyser la production. Les outils SOC traditionnels ne couvrent pas le flux IT/OT, et la réponse humaine est trop lente face aux menaces automatisées.",
+      },
+      solution: {
+        label: "Solution",
+        text: "Conception d'un SOC automatisé IT/OT combinant détection SIEM (Wazuh), analyse IA des alertes (Mistral), orchestration de la réponse (n8n) et blocage automatique au niveau du firewall (pfSense). Le système détecte les anomalies Modbus, les corrèle avec les logs IT, et déclenche une réponse automatisée en moins de 8 secondes.",
+      },
+      result: {
+        label: "Résultat",
+        text: "Blocage des menaces OT en moins de 8 secondes — en environnement de laboratoire / simulation. Ce résultat a été mesuré dans un cadre de test contrôlé et ne constitue pas une promesse de performance en production.",
+      },
+      stack: {
+        label: "Stack technique",
+        items: ["Wazuh", "Mistral AI", "n8n", "pfSense", "Modbus", "Python", "Docker"],
+      },
+      diagram: {
+        title: "Architecture du SOC automatisé IT/OT",
+        plcn: "Modbus / PLC",
+        wazuh: "Wazuh (SIEM)",
+        mistral: "Mistral AI",
+        n8n: "n8n (SOAR)",
+        pfsense: "pfSense",
+        detect: "Détection",
+        analyze: "Analyse IA",
+        respond: "Réponse",
+        block: "Blocage",
+      },
+    },
+    otherProjects: {
+      tag: "05. Autres projets",
+      heading: "Autres projets",
+      items: [
+        {
+          title: "Détection de phishing par NLP / ML",
+          description: "Modèle de classification d'emails de phishing utilisant le NLP (TF-IDF + Naive Bayes) et ML, avec interface de test en Python.",
+          stack: ["Python", "scikit-learn", "NLTK", "Flask"],
+          link: "[À COMPLÉTER]",
+        },
+        {
+          title: "Audit ISO 27001 — OCP Group",
+          description: "Participation à un audit de conformité ISO 27001 : cartographie des risques, revue des politiques, identification des écarts.",
+          stack: ["ISO 27001", "Analyse de risques", "Reporting"],
+          link: "[À COMPLÉTER]",
+        },
+        {
+          title: "Infrastructure IT/OT sécurisée",
+          description: "Conception et déploiement d'une infrastructure laboratoire isolant les segments IT et OT avec firewall pfSense et segmentation VLAN.",
+          stack: ["pfSense", "VLAN", "Docker", "Modbus"],
+          link: "[À COMPLÉTER]",
+        },
+        {
+          title: "Surveillance des authentifications AD",
+          description: "Mise en place de règles de détection Wazuh sur Active Directory : détection de brute-force, hash dumping, et comptes inactifs.",
+          stack: ["Wazuh", "Active Directory", "Sigma rules"],
+          link: "[À COMPLÉTER]",
+        },
+      ],
+    },
+    timeline: {
+      tag: "06. Parcours",
+      heading: "Parcours",
+      items: [
+        {
+          date: "2022 — 2026",
+          title: "Ingénieure en Cybersécurité & Confiance Numérique",
+          org: "ENSET Mohammedia, Université Hassan II",
+          description: "Formation d'ingénieur spécialisée en cybersécurité, confiance numérique et sécurité des systèmes IT/OT.",
+        },
+        {
+          date: "2025 — 2026",
+          title: "Stage : SOC Analyst IT/OT",
+          org: "OCP Group",
+          description: "Conception et implémentation d'un SOC automatisé IT/OT (projet de fin d'études) : Wazuh, Mistral AI, n8n, pfSense.",
+        },
+        {
+          date: "2024",
+          title: "Stage : Audit ISO 27001",
+          org: "OCP Group",
+          description: "Participation à l'audit de conformité ISO 27001, cartographie des risques et revue des contrôles de sécurité.",
+        },
+        {
+          date: "2023",
+          title: "Stage : Surveillance des authentifications AD",
+          org: "OCP Group",
+          description: "Déploiement de règles de détection Wazuh sur Active Directory : brute-force, hash dumping, comptes inactifs.",
+        },
+      ],
+    },
+    contact: {
+      tag: "07. Contact",
+      heading: "Me contacter",
+      intro: "Recruteurs, managers techniques : écrivez-moi via le formulaire ci-dessous. Je réponds sous 48 h.",
+      name: "Nom",
+      namePlaceholder: "Votre nom",
+      email: "Email",
+      emailPlaceholder: "votre.email@exemple.com",
+      message: "Message",
+      messagePlaceholder: "Décrivez le poste ou votre demande…",
+      send: "Envoyer",
+      sending: "Envoi en cours…",
+      success: "Message envoyé. Merci, je vous réponds sous 48 h.",
+      error: "Une erreur est survenue. Réessayez ou écrivez-moi directement par email.",
+      invalidEmail: "Adresse email invalide.",
+      requiredField: "Ce champ est obligatoire.",
+    },
+    footer: {
+      rights: "© 2026 Wijdane Hachani. Tous droits réservés.",
+      built: "Conçu et développé avec attention au détail.",
+    },
+    common: {
+      level: "Niveau",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+      email: "Email",
+      viewProject: "Voir le projet",
+    },
+  },
+  en: {
+    nav: {
+      about: "About",
+      skills: "Skills",
+      certs: "Certifications",
+      project: "Featured Project",
+      projects: "Projects",
+      timeline: "Experience",
+      contact: "Contact",
+    },
+    hero: {
+      prompt: "whoami",
+      name: "Wijdane Hachani",
+      title: "Cybersecurity & Digital Trust Engineer",
+      subtitles: [
+        "SOC Analyst",
+        "Threat Detection",
+        "SIEM & SOAR",
+        "IT/OT Security",
+      ],
+      location: "Safi, Morocco — open to Casablanca / Rabat",
+      downloadCV: "Download my CV",
+      contact: "Contact me",
+    },
+    about: {
+      tag: "01. About",
+      heading: "About",
+      text1: "Cybersecurity and digital trust engineer, graduating from ENSET Mohammedia in 2026. Specialized in SOC analysis, threat detection, and IT/OT environment security.",
+      text2: "I gained hands-on experience through three internships at OCP Group, working on an automated IT/OT SOC, an ISO 27001 compliance audit, and SIEM-based threat detection.",
+      text3: "Rigorous, methodical, and passionate about defensive security, I am seeking a first role as a Blue Team or SOC Analyst L1 in Morocco.",
+      metrics: [
+        { value: "3", label: "cybersecurity internships at OCP Group" },
+        { value: "5+", label: "SOC tools mastered (Wazuh, pfSense, n8n…)" },
+        { value: "2026", label: "ENSET Mohammedia degree" },
+      ],
+    },
+    skills: {
+      tag: "02. Skills",
+      heading: "Technical skills",
+      categories: [
+        {
+          title: "SOC & Detection",
+          icon: "ShieldAlert",
+          items: [
+            { name: "Wazuh (SIEM)", level: "Advanced" },
+            { name: "Threat detection", level: "Intermediate" },
+            { name: "Log analysis", level: "Advanced" },
+            { name: "IT/OT monitoring", level: "Intermediate" },
+            { name: "DFIR (intro)", level: "Basic" },
+          ],
+        },
+        {
+          title: "Network & Security",
+          icon: "Network",
+          items: [
+            { name: "pfSense / Firewall", level: "Intermediate" },
+            { name: "Modbus / DNP3 protocols", level: "Intermediate" },
+            { name: "TCP/IP & VLAN", level: "Advanced" },
+            { name: "IDS / IPS", level: "Intermediate" },
+          ],
+        },
+        {
+          title: "Systems & Virtualization",
+          icon: "Server",
+          items: [
+            { name: "Linux (Debian/Ubuntu)", level: "Advanced" },
+            { name: "Windows Server / AD", level: "Intermediate" },
+            { name: "Docker", level: "Intermediate" },
+            { name: "VirtualBox / Proxmox", level: "Intermediate" },
+          ],
+        },
+        {
+          title: "Automation & Scripting",
+          icon: "Terminal",
+          items: [
+            { name: "Python", level: "Advanced" },
+            { name: "Bash", level: "Intermediate" },
+            { name: "n8n (SOAR)", level: "Intermediate" },
+            { name: "PowerShell", level: "Basic" },
+          ],
+        },
+        {
+          title: "Audit & Compliance",
+          icon: "ClipboardCheck",
+          items: [
+            { name: "ISO 27001", level: "Intermediate" },
+            { name: "Risk analysis", level: "Intermediate" },
+            { name: "Security policies", level: "Intermediate" },
+          ],
+        },
+        {
+          title: "Databases",
+          icon: "Database",
+          items: [
+            { name: "MySQL", level: "Intermediate" },
+            { name: "PostgreSQL", level: "Intermediate" },
+            { name: "Elasticsearch", level: "Basic" },
+          ],
+        },
+      ],
+    },
+    certifications: {
+      tag: "03. Certifications",
+      heading: "Certifications",
+      placeholder: "[TO COMPLETE — exact list and verification links]",
+      list: [
+        { name: "[TO COMPLETE]", org: "[Organization]", year: "[Year]" },
+      ],
+    },
+    featuredProject: {
+      tag: "04. Featured Project",
+      heading: "Automated IT/OT SOC — OCP Group",
+      problem: {
+        label: "Problem",
+        text: "In an industrial environment, attacks on OT systems (Modbus protocols, PLCs) can paralyze production. Traditional SOC tools do not cover the IT/OT flow, and human response is too slow against automated threats.",
+      },
+      solution: {
+        label: "Solution",
+        text: "Design of an automated IT/OT SOC combining SIEM detection (Wazuh), AI alert analysis (Mistral), response orchestration (n8n), and automatic firewall blocking (pfSense). The system detects Modbus anomalies, correlates them with IT logs, and triggers an automated response in under 8 seconds.",
+      },
+      result: {
+        label: "Result",
+        text: "OT threat blocking in under 8 seconds — in a lab / simulation environment. This result was measured in a controlled test setting and does not constitute a production performance guarantee.",
+      },
+      stack: {
+        label: "Tech stack",
+        items: ["Wazuh", "Mistral AI", "n8n", "pfSense", "Modbus", "Python", "Docker"],
+      },
+      diagram: {
+        title: "Automated IT/OT SOC Architecture",
+        plcn: "Modbus / PLC",
+        wazuh: "Wazuh (SIEM)",
+        mistral: "Mistral AI",
+        n8n: "n8n (SOAR)",
+        pfsense: "pfSense",
+        detect: "Detection",
+        analyze: "AI Analysis",
+        respond: "Response",
+        block: "Blocking",
+      },
+    },
+    otherProjects: {
+      tag: "05. Other Projects",
+      heading: "Other projects",
+      items: [
+        {
+          title: "Phishing detection via NLP / ML",
+          description: "Phishing email classification model using NLP (TF-IDF + Naive Bayes) and ML, with a Python testing interface.",
+          stack: ["Python", "scikit-learn", "NLTK", "Flask"],
+          link: "[TO COMPLETE]",
+        },
+        {
+          title: "ISO 27001 Audit — OCP Group",
+          description: "Participation in an ISO 27001 compliance audit: risk mapping, policy review, and gap identification.",
+          stack: ["ISO 27001", "Risk analysis", "Reporting"],
+          link: "[TO COMPLETE]",
+        },
+        {
+          title: "Secured IT/OT Infrastructure",
+          description: "Design and deployment of a lab infrastructure isolating IT and OT segments with pfSense firewall and VLAN segmentation.",
+          stack: ["pfSense", "VLAN", "Docker", "Modbus"],
+          link: "[TO COMPLETE]",
+        },
+        {
+          title: "AD Authentication Monitoring",
+          description: "Deploying Wazuh detection rules on Active Directory: brute-force, hash dumping, and inactive accounts.",
+          stack: ["Wazuh", "Active Directory", "Sigma rules"],
+          link: "[TO COMPLETE]",
+        },
+      ],
+    },
+    timeline: {
+      tag: "06. Experience",
+      heading: "Experience",
+      items: [
+        {
+          date: "2022 — 2026",
+          title: "Cybersecurity & Digital Trust Engineering degree",
+          org: "ENSET Mohammedia, Hassan II University",
+          description: "Engineering program specialized in cybersecurity, digital trust, and IT/OT systems security.",
+        },
+        {
+          date: "2025 — 2026",
+          title: "Internship: IT/OT SOC Analyst",
+          org: "OCP Group",
+          description: "Design and implementation of an automated IT/OT SOC (final year project): Wazuh, Mistral AI, n8n, pfSense.",
+        },
+        {
+          date: "2024",
+          title: "Internship: ISO 27001 Audit",
+          org: "OCP Group",
+          description: "Participation in the ISO 27001 compliance audit, risk mapping, and security controls review.",
+        },
+        {
+          date: "2023",
+          title: "Internship: AD Authentication Monitoring",
+          org: "OCP Group",
+          description: "Deploying Wazuh detection rules on Active Directory: brute-force, hash dumping, inactive accounts.",
+        },
+      ],
+    },
+    contact: {
+      tag: "07. Contact",
+      heading: "Get in touch",
+      intro: "Recruiters, technical managers: write to me using the form below. I respond within 48 hours.",
+      name: "Name",
+      namePlaceholder: "Your name",
+      email: "Email",
+      emailPlaceholder: "your.email@example.com",
+      message: "Message",
+      messagePlaceholder: "Describe the position or your request…",
+      send: "Send",
+      sending: "Sending…",
+      success: "Message sent. Thank you, I will respond within 48 hours.",
+      error: "An error occurred. Please try again or email me directly.",
+      invalidEmail: "Invalid email address.",
+      requiredField: "This field is required.",
+    },
+    footer: {
+      rights: "© 2026 Wijdane Hachani. All rights reserved.",
+      built: "Designed and built with attention to detail.",
+    },
+    common: {
+      level: "Level",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+      email: "Email",
+      viewProject: "View project",
+    },
+  },
+} as const;
+
+export type TranslationDict = (typeof translations)["fr"];
