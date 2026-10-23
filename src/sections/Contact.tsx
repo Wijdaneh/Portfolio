@@ -1,8 +1,8 @@
 import { useState, type FormEvent } from "react";
-import { Send, CheckCircle2, AlertCircle, Mail, Linkedin, Github } from "lucide-react";
+import { Send, CheckCircle2, AlertCircle, Mail, Linkedin, Github, Phone } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/[À_COMPLÉTER]";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
 
 export default function Contact() {
   const { t } = useApp();
@@ -37,6 +37,19 @@ export default function Contact() {
     }
 
     if (!validate(data)) return;
+
+    const name = (data.get("name") as string)?.trim() ?? "";
+    const email = (data.get("email") as string)?.trim() ?? "";
+    const message = (data.get("message") as string)?.trim() ?? "";
+
+    if (!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.includes("your-form-id")) {
+      const subject = encodeURIComponent(`Portfolio contact: ${name}`);
+      const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:wijdane.hachani@gmail.com?subject=${subject}&body=${body}`;
+      setStatus("success");
+      form.reset();
+      return;
+    }
 
     setStatus("sending");
     try {
@@ -185,7 +198,7 @@ export default function Contact() {
 
       <div className="flex flex-wrap justify-center gap-6 mt-8">
         <a
-          href="mailto:wijdane.hachani@example.com"
+          href="mailto:wijdane.hachani@gmail.com"
           className="flex items-center gap-2 text-sm transition-colors"
           style={{ color: "var(--text-secondary)" }}
         >
@@ -193,7 +206,15 @@ export default function Contact() {
           {t.common.email}
         </a>
         <a
-          href="[À_COMPLÉTER — URL LinkedIn]"
+          href="tel:+212624920087"
+          className="flex items-center gap-2 text-sm transition-colors"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          <Phone size={18} style={{ color: "var(--accent)" }} />
+          0624920087
+        </a>
+        <a
+          href="https://www.linkedin.com/in/wijdane-hachani-72b56a269"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm transition-colors"
@@ -203,7 +224,7 @@ export default function Contact() {
           {t.common.linkedin}
         </a>
         <a
-          href="[À_COMPLÉTER — URL GitHub]"
+          href="https://github.com/Wijdaneh"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm transition-colors"

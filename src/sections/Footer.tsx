@@ -1,4 +1,4 @@
-import { Linkedin, Github, Mail, ShieldCheck } from "lucide-react";
+import { Linkedin, Github, Mail, ShieldCheck, Phone } from "lucide-react";
 import { useApp } from "@/context/AppContext";
 
 export default function Footer() {
@@ -19,7 +19,7 @@ export default function Footer() {
 
         <div className="flex gap-4">
           <a
-            href="mailto:wijdane.hachani@example.com"
+            href="mailto:wijdane.hachani@gmail.com"
             aria-label={t.common.email}
             style={{ color: "var(--text-secondary)" }}
             className="transition-colors hover:text-[var(--accent)]"
@@ -27,7 +27,15 @@ export default function Footer() {
             <Mail size={20} />
           </a>
           <a
-            href="[À_COMPLÉTER — URL LinkedIn]"
+            href="tel:+212624920087"
+            aria-label="Téléphone"
+            style={{ color: "var(--text-secondary)" }}
+            className="transition-colors hover:text-[var(--accent)]"
+          >
+            <Phone size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/wijdane-hachani-72b56a269"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t.common.linkedin}
@@ -37,7 +45,7 @@ export default function Footer() {
             <Linkedin size={20} />
           </a>
           <a
-            href="[À_COMPLÉTER — URL GitHub]"
+            href="https://github.com/Wijdaneh"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t.common.github}
