@@ -29,7 +29,6 @@ export default function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Honeypot check — if filled, silently abort (bot caught)
     const honeypot = data.get("_gotcha") as string;
     if (honeypot) {
       setStatus("success");
@@ -66,7 +65,6 @@ export default function Contact() {
 
       <div className="card">
         <form onSubmit={handleSubmit} noValidate>
-          {/* Honeypot field — visually hidden, bots will fill it */}
           <div
             style={{
               position: "absolute",
@@ -170,7 +168,6 @@ export default function Contact() {
             {status === "sending" ? t.contact.sending : t.contact.send}
           </button>
 
-          {/* Status messages — accessible, with role */}
           {status === "success" && (
             <div className="mt-4 flex items-center gap-2 p-3 rounded-lg" style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)" }} role="status">
               <CheckCircle2 size={20} style={{ color: "#22c55e" }} />
@@ -186,7 +183,6 @@ export default function Contact() {
         </form>
       </div>
 
-      {/* Direct contact links */}
       <div className="flex flex-wrap justify-center gap-6 mt-8">
         <a
           href="mailto:wijdane.hachani@example.com"

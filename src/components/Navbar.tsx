@@ -51,7 +51,6 @@ export default function Navbar() {
           <span>WH</span>
         </a>
 
-        {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-6 list-none">
           {navItems.map((item) => (
             <li key={item.href}>
@@ -62,7 +61,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Controls */}
         <div className="flex items-center gap-2">
           <button
             onClick={toggleLang}
@@ -101,7 +99,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
       {open && (
         <ul
           className="md:hidden list-none px-4 pb-4 flex flex-col gap-3"

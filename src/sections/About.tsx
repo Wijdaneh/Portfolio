@@ -15,7 +15,6 @@ export default function About() {
           <p style={{ color: "var(--text-secondary)", lineHeight: 1.7 }}>{t.about.text3}</p>
         </div>
 
-        {/* Key metrics */}
         <div className="flex flex-col gap-4">
           {t.about.metrics.map((m, i) => (
             <div
