@@ -24,7 +24,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setLangState(storedLang);
       }
     } catch {
-      /* localStorage unavailable — default to FR */
     }
   }, []);
 
@@ -35,7 +34,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
         setThemeState(storedTheme);
       }
     } catch {
-      /* localStorage unavailable — default to dark */
     }
   }, []);
 
@@ -50,7 +48,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     try {
       localStorage.setItem("lang", l);
     } catch {
-      /* ignore */
     }
   };
 
@@ -59,7 +56,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
     try {
       localStorage.setItem("theme", th);
     } catch {
-      /* ignore */
     }
   };
 

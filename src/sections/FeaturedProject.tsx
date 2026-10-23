@@ -42,25 +42,21 @@ export default function FeaturedProject() {
       <p className="section-tag mb-2">{fp.tag}</p>
       <h2 className="section-heading mb-10">{fp.heading}</h2>
 
-      {/* Architecture diagram */}
       <div className="card mb-10" style={{ padding: "2rem", overflow: "hidden" }}>
         <h3 className="font-mono text-sm mb-4" style={{ color: "var(--text-secondary)" }}>
           {fp.diagram.title}
         </h3>
 
-        {/* SVG Architecture — responsive inline */}
         <svg
           viewBox="0 0 900 220"
           style={{ width: "100%", height: "auto" }}
           role="img"
           aria-label={fp.diagram.title}
         >
-          {/* Connecting lines */}
           <line x1="150" y1="110" x2="270" y2="110" stroke="var(--accent)" strokeWidth="2" className={activeStep >= 1 ? "flow-line" : ""} style={{ opacity: activeStep >= 1 ? 1 : 0.2 }} />
           <line x1="420" y1="110" x2="540" y2="110" stroke="var(--accent)" strokeWidth="2" className={activeStep >= 2 ? "flow-line" : ""} style={{ opacity: activeStep >= 2 ? 1 : 0.2 }} />
           <line x1="690" y1="110" x2="810" y2="110" stroke="var(--accent)" strokeWidth="2" className={activeStep >= 3 ? "flow-line" : ""} style={{ opacity: activeStep >= 3 ? 1 : 0.2 }} />
 
-          {/* Node 1: Modbus / PLC */}
           <g className={activeStep >= 0 ? "flow-node-active" : ""} style={{ opacity: activeStep >= 0 ? 1 : 0.4 }}>
             <rect x="30" y="70" width="120" height="80" rx="8" fill="var(--surface)" stroke="var(--accent)" strokeWidth="2" />
             <text x="90" y="105" textAnchor="middle" fill="var(--text-primary)" fontSize="13" fontFamily="JetBrains Mono, monospace" fontWeight="600">
@@ -74,7 +70,6 @@ export default function FeaturedProject() {
             {fp.diagram.detect}
           </text>
 
-          {/* Node 2: Wazuh */}
           <g className={activeStep >= 1 ? "flow-node-active" : ""} style={{ opacity: activeStep >= 1 ? 1 : 0.4 }}>
             <rect x="270" y="70" width="150" height="80" rx="8" fill="var(--surface)" stroke="var(--accent)" strokeWidth="2" />
             <text x="345" y="105" textAnchor="middle" fill="var(--text-primary)" fontSize="13" fontFamily="JetBrains Mono, monospace" fontWeight="600">
@@ -88,7 +83,6 @@ export default function FeaturedProject() {
             {fp.diagram.analyze}
           </text>
 
-          {/* Node 3: Mistral */}
           <g className={activeStep >= 2 ? "flow-node-active" : ""} style={{ opacity: activeStep >= 2 ? 1 : 0.4 }}>
             <rect x="540" y="70" width="150" height="80" rx="8" fill="var(--surface)" stroke="var(--accent)" strokeWidth="2" />
             <text x="615" y="105" textAnchor="middle" fill="var(--text-primary)" fontSize="13" fontFamily="JetBrains Mono, monospace" fontWeight="600">
@@ -102,7 +96,6 @@ export default function FeaturedProject() {
             {fp.diagram.respond}
           </text>
 
-          {/* Node 4: n8n */}
           <g className={activeStep >= 3 ? "flow-node-active" : ""} style={{ opacity: activeStep >= 3 ? 1 : 0.4 }}>
             <rect x="810" y="70" width="80" height="80" rx="8" fill="var(--surface)" stroke="var(--accent)" strokeWidth="2" />
             <text x="850" y="105" textAnchor="middle" fill="var(--text-primary)" fontSize="13" fontFamily="JetBrains Mono, monospace" fontWeight="600">
@@ -113,12 +106,10 @@ export default function FeaturedProject() {
             </text>
           </g>
 
-          {/* Bottom row: pfSense blocking feedback */}
           <line x1="850" y1="150" x2="850" y2="180" stroke="var(--accent)" strokeWidth="2" className={activeStep >= 4 ? "flow-line" : ""} style={{ opacity: activeStep >= 4 ? 1 : 0.2 }} />
           <line x1="850" y1="180" x2="90" y2="180" stroke="var(--accent)" strokeWidth="2" className={activeStep >= 4 ? "flow-line" : ""} style={{ opacity: activeStep >= 4 ? 1 : 0.2 }} />
           <line x1="90" y1="180" x2="90" y2="150" stroke="var(--accent)" strokeWidth="2" className={activeStep >= 4 ? "flow-line" : ""} style={{ opacity: activeStep >= 4 ? 1 : 0.2 }} />
 
-          {/* pfSense badge along the feedback line */}
           <g style={{ opacity: activeStep >= 4 ? 1 : 0.3 }}>
             <rect x="380" y="168" width="140" height="24" rx="4" fill="var(--surface)" stroke="var(--accent)" strokeWidth="1.5" />
             <text x="450" y="184" textAnchor="middle" fill="var(--accent)" fontSize="11" fontFamily="JetBrains Mono, monospace" fontWeight="600">
@@ -127,7 +118,6 @@ export default function FeaturedProject() {
           </g>
         </svg>
 
-        {/* Step labels (mobile-friendly) */}
         <div className="flex flex-wrap justify-center gap-2 mt-4 sm:hidden">
           {[
             { n: fp.diagram.plcn, s: 0 },
@@ -150,7 +140,6 @@ export default function FeaturedProject() {
         </div>
       </div>
 
-      {/* Problem / Solution / Result / Stack */}
       <div className="grid md:grid-cols-2 gap-6">
         <div className="card reveal">
           <div className="flex items-center gap-2 mb-3">

@@ -48,9 +48,7 @@ export default function Hero() {
       aria-label="Section d'accueil"
     >
       <div className="max-w-6xl w-full grid md:grid-cols-5 gap-8 items-center">
-        {/* Terminal + Text */}
         <div className="md:col-span-3">
-          {/* Terminal style prompt */}
           <div
             className="font-mono text-sm mb-4 p-3 rounded-lg"
             style={{
@@ -107,7 +105,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Photo placeholder */}
         <div className="md:col-span-2 flex justify-center">
           <div
             className="w-56 h-56 sm:w-72 sm:h-72 rounded-2xl overflow-hidden"
